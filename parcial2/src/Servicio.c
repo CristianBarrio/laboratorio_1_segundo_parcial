@@ -259,6 +259,15 @@ int Servicio_compararDescripcion(void* servicio1, void* servicio2)
 	return retorno;
 }
 
+
+void Servicio_asignarTotal(void* servicio)
+{
+	eServicio* totales = servicio;
+
+	Servicio_setTotalServicio(totales,totales->precioUnitario * totales->cantidad);
+
+}
+
 int Servicio_filtrarMinorista(void* servicio)
 {
 	int retorno = 0;
@@ -296,12 +305,4 @@ int Servicio_filtrarExportar(void* servicio)
 	}
 
 	return retorno;
-}
-
-void Servicio_asignarTotal(void* servicio)
-{
-	eServicio* totales = servicio;
-
-	Servicio_setTotalServicio(totales,totales->precioUnitario * totales->cantidad);
-
 }

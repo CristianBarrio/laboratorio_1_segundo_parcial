@@ -94,92 +94,99 @@ int Servicio_getDescripcion(eServicio* this,char* descripcion);
  */
 int Servicio_setTipo(eServicio* this,int tipo);
 
-/** Obtiene el apellido del pasajero
+/** Obtiene el tipo al servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param apellido char* puntero al apellido del pasajero
+ * @param this eServicio* puntero al servicio
+ * @param tipo int* puntero al tipo de servicio
  * @return retorna 0 si hubo un error, de lo contrario 1
  */
 int Servicio_getTipo(eServicio* this,int* tipo);
 
-/** Asigna el codigo de vuelo al pasajero
+/** Asigna el precio unitario al servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param codigoVuelo char* puntero al codigo de vuelo
+ * @param this eServicio* puntero al servicio
+ * @param precioUnitario float precio de una unidad
  * @return retorna 0 si hubo un error, de lo contrario 1
  */
 int Servicio_setPrecioUnitario(eServicio* this,float precioUnitario);
 
-/** Obtiene el codigo de vuelo del pasajero
+/** Obtiene el precio unitario del servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param codigoVuelo char* puntero al codigo de vuelo
+ * @param this eServicio* puntero al servicio
+ * @param precioUnitario float* puntero al precio de una unidad
  * @return retorna 0 si hubo un error, de lo contrario 1
  */
 int Servicio_getPrecioUnitario(eServicio* this,float* precioUnitario);
 
-/** Asigna el tipo al pasajero
+/** Asigna la cantidad de un servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param tipoPasajero int tipo de pasajero
+ * @param this eServicio* puntero al servicio
+ * @param cantidad int cantidad del servicio
  * @return retorna 0 si hubo un error, de lo contrario 1
  */
 int Servicio_setCantidad(eServicio* this,int cantidad);
 
-/** Obtiene el tipo del pasajero
+/** Obtiene la cantidad de un servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param tipoPasajero int* puntero al tipo de pasajero
+ * @param this eServicio* puntero al servicio
+ * @param cantidad int* puntero a la cantidad del servicio
  * @return retorna 0 si hubo un error, de lo contrario 1
  */
 int Servicio_getCantidad(eServicio* this,int* cantidad);
 
-/** Asigna el precio al pasajero
+/** Asigna el precio total de un servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param precio float Precio del vuelo
+ * @param this eServicio* puntero al servicio
+ * @param totalServicio float precio total del servicio
  * @return retorna 0 si hubo un error, de lo contrario 1
  */
 int Servicio_setTotalServicio(eServicio* this,float totalServicio);
 
-/** Obtiene el precio del pasajero
+/** Obtiene el precio total de un servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param precio float* puntero al precio del vuelo
+ * @param this eServicio* puntero al servicio
+ * @param totalServicio float* puntero al precio total del servicio
  * @return retorna 0 si hubo un error, de lo contrario 1
  */
 int Servicio_getTotalServicio(eServicio* this,float* totalServicio);
 
-/** Asigna el estado del vuelo al pasajero
+/** Muestra los datos de un servicio
  *
- * @param this Passenger* puntero al pasajero
- * @param estadoVuelo int estado del vuelo
- * @return retorna 0 si hubo un error, de lo contrario 1
- */
-int Servicio_setEstadoVuelo(eServicio* this,int estadoVuelo);
-
-/** Muestra los datos de un pasajero
- *
- * @param unPasajero Passenger* puntero al pasajero
+ * @param unServicio eServicio* puntero al servicio
  */
 void Servicio_mostrarUnServicio(eServicio* unServicio);
 
-/** Busca un pasajero segun su ID
+/** Compara las descripciones de dos servicios
  *
- * @param this LinkedList* puntero al LinkedList
- * @param id int ID a buscar
- * @return retorna 0 si hubo un error, de lo contrario devuelve el indice del pasajero en el LinkedList
- */
-int Servicio_buscarServicio(LinkedList* this, int id);
-
-/** Compara los apellidos de dos pasajeros
- *
- * @param pasajero1 void* puntero a un pasajero de la lista
- * @param pasajero2 void* puntero a otro pasajero de la lista
+ * @param servicio1 void* puntero a un servicio de la lista
+ * @param servicio2 void* puntero a otro servicio de la lista
  * @return retorna el resultado de la funcion strcmp
  */
 int Servicio_compararDescripcion(void* servicio1, void* servicio2);
+
+/** Asigna al precio total a un servicio, multiplicando
+ *  el precio unitario por la cantidad
+ * @param servicio void* puntero vacio a un servicio
+ */
 void Servicio_asignarTotal(void* servicio);
+
+/**
+ *
+ * @param servicio void* puntero vacio a un servicio
+ * @return retorna 1 si el tipo de servicio es minorista, de lo contrario 0
+ */
 int Servicio_filtrarMinorista(void* servicio);
+
+/**
+ *
+ * @param servicio void* puntero vacio a un servicio
+ * @return retorna 1 si el tipo de servicio es mayorista, de lo contrario 0
+ */
 int Servicio_filtrarMayorista(void* servicio);
+
+/**
+ *
+ * @param servicio void* puntero vacio a un servicio
+ * @return retorna 1 si el tipo de servicio es exportar, de lo contrario 0
+ */
 int Servicio_filtrarExportar(void* servicio);

@@ -138,6 +138,18 @@ int controller_saveAsText(char* path , LinkedList* pArrayListServicio)
     return retorno;
 }
 
+int controller_AsignarTotales(LinkedList* pArrayListServicio)
+{
+	int retorno = 0;
+
+	if(pArrayListServicio != NULL)
+	{
+		ll_map(pArrayListServicio,Servicio_asignarTotal);
+		retorno = 1;
+	}
+
+	return retorno;
+}
 
 int controller_filterByType(LinkedList* pArrayListServicio, char* path)
 {
@@ -181,16 +193,4 @@ int controller_filterByType(LinkedList* pArrayListServicio, char* path)
 	return retorno;
 }
 
-int controller_AsignarTotales(LinkedList* pArrayListServicio)
-{
-	int retorno = 0;
-
-	if(pArrayListServicio != NULL)
-	{
-		ll_map(pArrayListServicio,Servicio_asignarTotal);
-		retorno = 1;
-	}
-
-	return retorno;
-}
 

@@ -18,7 +18,7 @@
 /** \brief Parsea los datos los datos de los servicios desde el archivo data.csv
  *
  * @param pFile FILE* archivo a parsear
- * @param pArrayListPassenger LinkedList* puntero a la lista de servicios
+ * @param pArrayListServicio LinkedList* puntero a la lista de servicios
  * @return retorna 0 si hubo un problema, de lo contrario 1
  */
 int parser_ServiceFromText(FILE* pFile , LinkedList* pArrayListServicio);
