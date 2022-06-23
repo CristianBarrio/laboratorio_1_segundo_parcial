@@ -188,6 +188,8 @@ int controller_filterByType(LinkedList* pArrayListServicio, char* path)
 			}
 		}
 
+		ll_deleteLinkedList(listaFiltrada);
+
 	}
 
 	return retorno;

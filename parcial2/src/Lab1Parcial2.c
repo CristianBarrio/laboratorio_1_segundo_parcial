@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : Lab1Parcial2.c
- Author      : 
+ Author      : Barrio Cristian
  Version     :
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
@@ -63,6 +63,7 @@ int main(void) {
 					if(controller_AsignarTotales(listaServicios))
 					{
 						printf("Precios totales asignados con exito.\n");
+						flagGuardado = 0;
 					}else
 					{
 						printf("Hubo un problema al asignar los precios.\n");
